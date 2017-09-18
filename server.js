@@ -13,6 +13,17 @@ var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
 var TOKEN_PATH = TOKEN_DIR + 'client_secret.json';
 
 
+// Load client secrets from a local file.
+fs.readFile('client_secret.json', function processClientSecrets(err, content) {
+  if (err) {
+    console.log('Error loading client secret file: ' + err);
+    return;
+  }
+  // Authorize a client with the loaded credentials, then call the
+  // Google Sheets API.
+  authorize(JSON.parse(content), listMajors);
+});
+
 
 // init project
 var express = require('express');
