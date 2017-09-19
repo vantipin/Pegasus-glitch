@@ -100,6 +100,8 @@ function storeToken(token) {
   console.log('Token stored to ' + TOKEN_PATH);
 }
 
+
+
 /**
  * Print the names and majors of students in a sample spreadsheet:
  * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
@@ -108,7 +110,7 @@ function listMajors(auth) {
   var sheets = google.sheets('v4');
   sheets.spreadsheets.values.get({
     auth: auth,
-    spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
+    spreadsheetId: '1wvU9cGnSfRL4SQR4GmFMFnW5ryh2rza-f8p2gZl1aag',
     range: 'Class Data!A2:E',
   }, function(err, response) {
     if (err) {
