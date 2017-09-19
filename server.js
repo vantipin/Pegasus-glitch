@@ -148,7 +148,24 @@ function listMajors(auth) {
 
 function parseProducts(productsRaw) {
   console.log(productsRaw);  
-  //console.log(productsRaw.data[0].rowData);
+  if (productsRaw.data.length > 0) {
+    if (productsRaw.data[0].rowData.length > 0) {
+      console.log('----------------------------');
+      console.log(productsRaw.data[0].rowData[2].values[0].formattedValue);
+      /*
+      productsRaw.data[0].rowData.forEach(function (element) {
+        if (element.values[0].formattedValue !== nil) {
+        
+        }
+        else {
+          breakl
+        }
+        var cells = element.values[0].formattedValue;
+        console.log(element);
+      });  
+      */
+    }
+  }
 }
 
 function parseCategories(categoriesRaw) {
