@@ -111,6 +111,7 @@ function listMajors(auth) {
   sheets.spreadsheets.get({
     auth: auth,
     spreadsheetId: '1wvU9cGnSfRL4SQR4GmFMFnW5ryh2rza-f8p2gZl1aag',
+    includeGridData: 'true',
     //range: 'A1:E',
     //majorDimension: 'ROWS'
   }, function(err, response) {
@@ -122,11 +123,12 @@ function listMajors(auth) {
     if (sheets.length == 0) {
       console.log('No data found.');
     } else {
-      console.log('Result: %s', sheets);
+      console.log('Result: %s', response);
+      //console.log(response);
       sheets.forEach(function(value) {
-        console.log(value);
+        //console.log(value);
         if (value.properties.title == 'Product') {
-          parseProducts();
+          parseProducts(value);
         }
       });
       /*
@@ -146,6 +148,7 @@ function listMajors(auth) {
 
 function parseProducts(productsRaw) {
   console.log(productsRaw);  
+  //console.log(productsRaw.data[0].rowData);
 }
 
 function parseCategories(categoriesRaw) {
