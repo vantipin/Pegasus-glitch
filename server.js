@@ -111,7 +111,7 @@ function listMajors(auth) {
   sheets.spreadsheets.values.get({
     auth: auth,
     spreadsheetId: '1wvU9cGnSfRL4SQR4GmFMFnW5ryh2rza-f8p2gZl1aag',
-    range: 'A1:E1',
+    range: 'A1:E',
     majorDimension: 'ROWS'
   }, function(err, response) {
     if (err) {
@@ -122,11 +122,14 @@ function listMajors(auth) {
     if (rows.length == 0) {
       console.log('No data found.');
     } else {
-      console.log('Name, Major:');
+      console.log('Result:');
       for (var i = 0; i < rows.length; i++) {
         var row = rows[i];
-        // Print columns A and E, which correspond to indices 0 and 4.
-        console.log('%s, %s', row[0], row[4]);
+        var string = "";
+        row.forEach(function (value) {
+          string += value + " ";
+        });
+        console.log(string);
       }
     }
   });
