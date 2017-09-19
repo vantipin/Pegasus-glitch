@@ -125,6 +125,9 @@ function listMajors(auth) {
       console.log('Result: %s', sheets);
       sheets.forEach(function(value) {
         console.log(value);
+        if (value.properties.title == 'Product') {
+          parseProducts();
+        }
       });
       /*
       for (var i = 0; i < rows.length; i++) {
@@ -141,7 +144,13 @@ function listMajors(auth) {
 }
 
 
-function parseProducts
+function parseProducts(productsRaw) {
+  console.log(productsRaw);  
+}
+
+function parseCategories(categoriesRaw) {
+  console.log(categoriesRaw);  
+}
 
 /*
 
