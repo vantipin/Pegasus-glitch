@@ -111,7 +111,8 @@ function listMajors(auth) {
   sheets.spreadsheets.values.get({
     auth: auth,
     spreadsheetId: '1wvU9cGnSfRL4SQR4GmFMFnW5ryh2rza-f8p2gZl1aag',
-    range: 'Class Data!A2:E',
+    range: 'A1:E1',
+    majorDimension: 'ROWS'
   }, function(err, response) {
     if (err) {
       console.log('The API returned an error: ' + err);
