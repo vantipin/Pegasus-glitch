@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Welcome to the Glitch BETA
 =========================
 
@@ -25,3 +26,6 @@ Made by [Fog Creek](https://fogcreek.com/)
 -------------------
 
 \ ゜o゜)ノ
+=======
+# Pegasus-glitch
+>>>>>>> 414c20cf31558e5d86bb185f1ce884202c6c4386
