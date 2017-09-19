@@ -122,7 +122,8 @@ function listMajors(auth) {
     if (rows.length == 0) {
       console.log('No data found.');
     } else {
-      console.log('Result:');
+      console.log('Result: %s', rows);
+      /*
       for (var i = 0; i < rows.length; i++) {
         var row = rows[i];
         var string = "";
@@ -131,6 +132,7 @@ function listMajors(auth) {
         });
         console.log(string);
       }
+      */
     }
   });
 }
