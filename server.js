@@ -151,19 +151,21 @@ function parseProducts(productsRaw) {
   if (productsRaw.data.length > 0) {
     if (productsRaw.data[0].rowData.length > 0) {
       console.log('----------------------------');
-      console.log(productsRaw.data[0].rowData[2].values[0].formattedValue);
-      /*
-      productsRaw.data[0].rowData.forEach(function (element) {
-        if (element.values[0].formattedValue !== nil) {
-        
+      //console.log(productsRaw.data[0].rowData[2].values[0].formattedValue);
+      
+      var items = productsRaw.data[0].rowData;
+      items.some(function (element) {
+        if (element.values[0].formattedValue !== undefined) {
+          var name = element.values[0].formattedValue;
+          console.log(name);
         }
         else {
-          breakl
+          console.log("Stop itterating");
+          return true
         }
-        var cells = element.values[0].formattedValue;
-        console.log(element);
+
       });  
-      */
+      
     }
   }
 }
