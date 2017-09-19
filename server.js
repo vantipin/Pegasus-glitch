@@ -108,21 +108,24 @@ function storeToken(token) {
  */
 function listMajors(auth) {
   var sheets = google.sheets('v4');
-  sheets.spreadsheets.values.get({
+  sheets.spreadsheets.get({
     auth: auth,
     spreadsheetId: '1wvU9cGnSfRL4SQR4GmFMFnW5ryh2rza-f8p2gZl1aag',
-    range: 'A1:E',
-    majorDimension: 'ROWS'
+    //range: 'A1:E',
+    //majorDimension: 'ROWS'
   }, function(err, response) {
     if (err) {
       console.log('The API returned an error: ' + err);
       return;
     }
-    var rows = response.values;
-    if (rows.length == 0) {
+    var sheets = response.sheets;
+    if (sheets.length == 0) {
       console.log('No data found.');
     } else {
-      console.log('Result: %s', rows);
+      console.log('Result: %s', sheets);
+      sheets.forEach(function(value) {
+        console.log(value);
+      });
       /*
       for (var i = 0; i < rows.length; i++) {
         var row = rows[i];
@@ -137,6 +140,8 @@ function listMajors(auth) {
   });
 }
 
+
+function parseProducts
 
 /*
 
