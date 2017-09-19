@@ -9,12 +9,12 @@ var googleAuth = require('google-auth-library');
 // at ~/.credentials/sheets.googleapis.com-nodejs-quickstart.json
 var SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
 var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
-    process.env.USERPROFILE) + '/assets/';
+    process.env.USERPROFILE) + '/';
 var TOKEN_PATH = TOKEN_DIR + 'client_secret.json';
 
 
 // Load client secrets from a local file.
-fs.readFile('assets/client_secret.json', function processClientSecrets(err, content) {
+fs.readFile('client_secret.json', function processClientSecrets(err, content) {
   if (err) {
     console.log('Error loading client secret file: ' + err);
     return;
@@ -130,6 +130,8 @@ function listMajors(auth) {
 }
 
 
+/*
+
 // init project
 var express = require('express');
 var app = express();
@@ -166,3 +168,5 @@ var dreams = [
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
+*/
