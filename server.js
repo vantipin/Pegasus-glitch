@@ -125,10 +125,13 @@ function listMajors(auth) {
     } else {
       console.log('Result: %s', response);
       //console.log(response);
-      sheets.forEach(function(value) {
+      sheets.some(function(value) {
         //console.log(value);
         if (value.properties.title == 'Product') {
           parseProducts(value);
+        }
+        else if (value.properties.title == 'Category') {
+          parseCategories(value);
         }
       });
       /*
@@ -150,14 +153,17 @@ function parseProducts(productsRaw) {
   console.log(productsRaw);  
   if (productsRaw.data.length > 0) {
     if (productsRaw.data[0].rowData.length > 0) {
-      console.log('----------------------------');
-      //console.log(productsRaw.data[0].rowData[2].values[0].formattedValue);
       
       var items = productsRaw.data[0].rowData;
       items.some(function (element) {
         if (element.values[0].formattedValue !== undefined) {
           var name = element.values[0].formattedValue;
-          console.log(name);
+          var category = element.values[1].formattedValue;
+          var price = element.values[2].formattedValue;
+          var description = element.values[3].formattedValue;
+          var images = element.values[4].formattedValue.split("/n");
+          //TODO PROCESS PRODUCT DATA
+          console.log(name + " " + category + " " + price + " " + description + " " + images);
         }
         else {
           console.log("Stop itterating");
