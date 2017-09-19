@@ -9,11 +9,7 @@ var googleAuth = require('google-auth-library');
 // at ~/.credentials/sheets.googleapis.com-nodejs-quickstart.json
 var SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
 var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
-<<<<<<< HEAD
-    process.env.USERPROFILE);
-=======
     process.env.USERPROFILE) + '/';
->>>>>>> 95d7a05e8b0996b62164b2fb4dde21109d67d130
 var TOKEN_PATH = TOKEN_DIR + 'client_secret.json';
 
 
